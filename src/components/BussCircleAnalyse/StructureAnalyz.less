@@ -1,0 +1,21 @@
+.list-item{
+  position: relative;
+  width: 50%;
+  height: 300px;
+  float: left;
+  .graph-style{
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #eee;
+    box-shadow: 1px 1px 4px rgba(0,0,0,.4);
+    border-radius: 3px;
+    transition: all .2s;
+  }
+  .graph-style:hover{
+    box-shadow: 1px 1px 6px rgba(0,0,0,.5);
+  }
+}

@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+
+<head></head>
+
+<body>
+
+  <h1>JUST FOR TEST</h1>
+  <button id="btn-test">FOR CLICK</button>
+  <script>
+    alert('dd')
+    const btn = document.querySelector('#btn-test');
+    console.log(btn)
+    btn.onclick = e => {
+      console.log(e)
+      parent.window.location.reload()
+    }
+  </script>
+</body>
+
+</html>

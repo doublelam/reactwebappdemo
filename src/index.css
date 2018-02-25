@@ -1,0 +1,14 @@
+
+:global {
+  html, body, #root {
+    height: 100%;
+
+  } 
+
+}
+button a:focus{
+  text-decoration: none
+}
+
+
+

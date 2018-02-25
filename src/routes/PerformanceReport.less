@@ -1,0 +1,109 @@
+.headContainer{
+  width: 100%;
+  overflow: auto;
+}
+
+.headLeftSide{
+  display: inline-block;
+  width: 10%;
+  background: #eee;
+  transition: box-shadow .5s;
+  position: relative;
+  z-index: 1;
+}
+.headLabelName{
+  text-align: right;
+  padding: 5px 10px;
+}
+
+.firstSnip{
+  transition: all .5s;
+  background-color: #ddd;
+  border-right: 1px solid #bbb;
+  cursor: pointer;
+}
+.firstSnipActived{
+  background-color: rgba(0,0,0,.15);
+}
+.firstSnip:hover{
+  background-color: rgba(0,0,0,.20);
+}
+.snipList{
+  padding: 5px 10px;
+}
+
+.headRightSide{
+  position: relative;
+  display: inline-block;
+  width: 90%;
+  white-space: nowrap;
+  background: #ddd;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.mainIncome{
+  display: inline-block;
+  vertical-align: top;
+  border-right: 1px solid #ccc
+}
+.radioSelectSection{
+  overflow: auto;
+  padding: 5px;
+  background-color: #F6F6F6;
+  box-shadow: 1px 1px 3px rgba(0,0,0,.3);
+  margin-bottom: 20px;
+  .selectItem{
+    padding: 10px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.netBussiness{
+  display: inline-block;
+  vertical-align: top;  
+}
+
+.rightSideContainer{
+  display: inline-block;
+  transition: all .3s;
+}
+
+.directIcon{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 32px;
+  color: #108EE9;
+  transition: all .5s;
+  text-shadow: 1px 1px 2px rgba(0,0,0,.5);
+  opacity: 0;
+  z-index: 1;
+  visibility: hidden
+}
+
+.directIcon.directIconShow:hover{
+  opacity: 1;
+  cursor: pointer;
+  text-shadow: 1px 1px 9px rgba(0,0,0,.5);
+}
+.directIcon.icon-right{
+  right: 0
+}
+
+.directIcon.icon-left{
+  left: 0
+}
+
+.directIcon.directIconShow{
+  visibility: visible;
+  opacity: .6
+}
+.forFillBlank{ 
+  padding: 5px;
+}
+.tablesItem{
+  margin-bottom: 20px;
+}
+

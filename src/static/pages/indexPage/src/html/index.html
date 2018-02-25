@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Boss运营平台</title>
+  <link rel="stylesheet" href="../../lib/font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="../../common/common.css">
+  <script src="https://cdn.bootcss.com/echarts/3.3.2/echarts.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="big-div">
+    <h2 class="header">智慧物流数据概览:</h2>
+    <div class="btnGroups">
+      <button class="basicBtn basicBtnLeft active" value="day">昨日</button><button class="basicBtn" value="month">本月</button><button class="basicBtn basicBtnRight" value="year">本年</button>
+    </div>
+    <hr />
+    <div class="basicContainer">
+      <div class="basicOne">
+        <div class="left">
+          <p class="basicData">
+            <i class="fa fa-inbox fa-2x icon" aria-hidden="true"></i>
+          </p>
+        </div>
+        <div class="right">
+          <p class="basicName">受理订单（个）</p>
+          <p class="basicNumber" data-type=weAcceptordernum></p>
+        </div>
+      </div>
+      <div class="basicOne">
+        <div class="left">
+          <p class="basicData basicDataTrunk">
+            <i class="fa fa-truck fa-2x icon iconTrunk" aria-hidden="true"></i>
+          </p>
+        </div>
+        <div class="right">
+          <p class="basicName">运单开单（个）</p>
+          <p class="basicNumber"  data-type=weShipordernum></p>
+        </div>
+      </div>
+      <div class="basicOne">
+        <div class="left">
+          <p class="basicData basicDataUser">
+            <i class="fa fa-user-o fa-2x icon iconUser" aria-hidden="true"></i>
+          </p>
+        </div>
+        <div class="right">
+          <p class="basicName">新增会员数量(个)</p>
+          <p class="basicNumber"  data-type=partyincrenum></p>
+        </div>
+      </div>
+      <div class="basicOne">
+        <div class="left">
+          <p class="basicData basicDataBank">
+            <i class="fa fa-university fa-2x icon iconBank" aria-hidden="true"></i>
+          </p>
+        </div>
+        <div class="right">
+          <p class="basicName">新增网点数量(个)</p>
+          <p class="basicNumber"  data-type=weWarehouseincrenum></p>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div class="basicContainer">
+      <div class="basicOne">
+        <div class="left">
+          <p class="basicData basicDatabase">
+            <i class="fa fa-database fa-2x icon" aria-hidden="true"></i>
+          </p>
+        </div>
+        <div class="right">
+          <p class="basicName">运费合计(万元)</p>
+          <p class="basicNumber" data-type=weShippingfee></p>
+        </div>
+      </div>
+      <div class="basicOne">
+        <div class="left">
+          <p class="basicData basicDataJpy">
+            <i class="fa fa-jpy fa-2x icon iconMoney" aria-hidden="true"></i>
+          </p>
+        </div>
+        <div class="right">
+          <p class="basicName">代收货款合计(万元)</p>
+          <p class="basicNumber" data-type=weInsteadfee></p>
+        </div>
+      </div>
+      <div class="basicOne">
+        <div class="left">
+          <p class="basicData basicDataLaptop">
+            <i class="fa fa-laptop fa-2x icon" aria-hidden="true"></i>
+          </p>
+        </div>
+        <div class="right">
+          <p class="basicName">线上代收货款总金额(万元)</p>
+          <p class="basicNumber" data-type=paymentAmount></p>
+        </div>
+      </div>
+      <div class="basicOne">
+        <div class="left">
+          <p class="basicData basicDataHandShake">
+            <i class="fa fa-handshake-o fa-2x icon" aria-hidden="true"></i>
+          </p>
+        </div>
+        <div class="right">
+          <p class="basicName">线上代收货款已收金额(万元)</p>
+          <p class="basicNumber" data-type=platformAmount></p>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div class="transfarTop10">
+      <h3 class="transfarWeb">传化网</h3>
+      <select name="" id="selected">
+        <option value="weAcceptordernum">受理订单（个）</option>
+        <option value="weShipordernum">运单开单（个）</option>
+        <option value="weWarehouseincrenum">新增网点数量(个)</option>
+        <option value="weShippingfee">运费合计(万元)</option>
+        <option value="weInsteadfee">代收货款合计(万元)</option>
+        <option value="paymentAmount">线上代收货款总金额(万元)</option>
+        <option value="platformAmount">线上代收货款已收金额(万元)</option>
+      </select>
+      <h3 class="transfarWeb order">排名</h3>
+      <div class="top10Group">
+        <button class="top10Btn basicBtnLeft active" value="region">大区</button><button class="top10Btn basicBtnRight" value="wayport">公路港</button>
+      </div>
+      <div class="content top10-content">
+        <div id="recentWeek12" style="width: 100%; height: 400px;"></div>
+      </div>
+    </div>
+    </div>
+    <div class="loadingFlow">
+      <div class="content lf-content">
+        <h2 class="lfTitle">传化网运单流量统计</h2>
+        <div class="lfBtnGroups">
+          <button class="lfBtn basicBtnLeft active" value="day">近30日</button><button class="lfBtn basicBtnRight" value="month">近12月</button>
+        </div>
+        <div id="loadingFlow" style="width: 100%;height: 400px;" class="mt10"></div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="../../lib/js/jquery-3.2.1.js"></script>
+<script src="../../lib/font-awesome-4.7.0/fonts/"></script>
+<script src="../../lib/js/FontAwesome.otf"></script>
+<script src="../js/index.js"></script>
+</html>
